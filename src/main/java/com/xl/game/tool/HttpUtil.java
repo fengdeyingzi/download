@@ -25,7 +25,7 @@ public class HttpUtil
 	 * @function trustAllHosts
 	 * @Description 信任所有主机-对于任何证书都不做检查
 	 */
-    private static void trustAllHosts()
+    public static void trustAllHosts()
     {
 		TrustManager[] arrayOfTrustManager = new TrustManager[1];
 		//实现自己的信任管理器类
@@ -186,7 +186,9 @@ public class HttpUtil
 			{
                 http.setRequestMethod("GET");// 设置请求类型
                 http.setDoInput(true);
-                http.setRequestProperty("Content-Type", "text/xml");
+               // http.setRequestProperty("Content-Type", "text/xml");
+                http.setRequestProperty("Content-Type", "application/x-www-form-urlencoded");
+                ;
 				http.setRequestProperty("user-agent", "Dalvik/1.6.0 (Linux; U; Android 4.4.4; MI 4LTE MIUI/V6.6.2.0.KXDCNCF)");
 				if (cookie != null)
 					http.setRequestProperty("Cookie", cookie);

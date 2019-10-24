@@ -9,11 +9,9 @@
 package com.xl.game.tool;
 
 import android.content.*;
-import android.net.Uri;
 import android.telephony.*;
 import android.util.*;
 import java.io.*;
-import java.util.UUID;
 
 import android.util.Log;
 import android.os.Build;
@@ -55,7 +53,30 @@ public class Tool
 					r2_int_A_A[y][x]=input.readInt();
 				}
 			}
-
+			
+			/*
+			y=0;
+			while(y<r2_int_A_A.length)
+			{
+				int x = 0;
+				
+				while(true)
+				{
+					
+					if(x>=r2_int_A_A[y].length)
+					{
+						y+=1;
+						break;
+					}
+					else
+					{
+						r2_int_A_A[y][x]=input.readInt();
+						x+=1;
+					}
+				}
+			}
+			
+			*/
 		}
 		catch(Exception e)
 		{
@@ -65,59 +86,14 @@ public class Tool
 	}
 	
 	//获取imei码
-	/*
-
-	 */
 	public static String getImei(Context context)
 	{
 		TelephonyManager tm = (TelephonyManager) context.getSystemService(Context.TELEPHONY_SERVICE);
-		if(Build.VERSION.SDK_INT<=28)
 		return tm.getDeviceId();
-		else
-			return getUUID();
 		// activity.getSystemService(Context.TELEPHONY_SERVICE).getDeviceId();
 //	String myIMSI=android.os.SystemProperties.get(android.telephony.TelephonyProperties.PROPERTY_IMSI);
 	}
 
-	public static String getUUID() {
-
-		String serial = null;
-
-		String m_szDevIDShort = "35" +
-				Build.BOARD.length() % 10 + Build.BRAND.length() % 10 +
-
-				Build.CPU_ABI.length() % 10 + Build.DEVICE.length() % 10 +
-
-				Build.DISPLAY.length() % 10 + Build.HOST.length() % 10 +
-
-				Build.ID.length() % 10 + Build.MANUFACTURER.length() % 10 +
-
-				Build.MODEL.length() % 10 + Build.PRODUCT.length() % 10 +
-
-				Build.TAGS.length() % 10 + Build.TYPE.length() % 10 +
-
-				Build.USER.length() % 10; //13 位
-
-		try {
-			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
-				serial = android.os.Build.getSerial();
-			} else {
-				serial = Build.SERIAL;
-			}
-			//API>=9 使用serial号
-			return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
-		} catch (Exception exception) {
-			//serial需要一个初始化
-			serial = "serial"; // 随便一个初始化
-		}
-		//使用硬件信息拼凑出来的15位号码
-		return new UUID(m_szDevIDShort.hashCode(), serial.hashCode()).toString();
-	}
-
-
-/*
-
- */
 	//获取imsi码
 	public static String getImsi(Context context)
 	{

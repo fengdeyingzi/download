@@ -2,13 +2,15 @@ package com.xl.view;
 
 import android.app.Dialog;
 import android.graphics.drawable.ColorDrawable;
-import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.view.KeyboardShortcutGroup;
 import android.view.Menu;
 import android.view.WindowManager;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+
+//import com.gmax1.qimopei_new.R;
 import com.xl.game.R;
 import com.xl.game.tool.ViewTool;
 

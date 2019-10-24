@@ -20,7 +20,7 @@ import android.graphics.Matrix;
 import android.graphics.Matrix.ScaleToFit;
 import android.graphics.RectF;
 import android.graphics.drawable.Drawable;
-import android.support.v4.view.MotionEventCompat;
+//import android.support.v4.view.MotionEventCompat;
 import android.view.GestureDetector;
 import android.view.MotionEvent;
 import android.view.View;
@@ -181,10 +181,10 @@ public class PhotoViewAttacher implements View.OnTouchListener,
                         return false;
                     }
 
-                    if (MotionEventCompat.getPointerCount(e1) > SINGLE_TOUCH
-                            || MotionEventCompat.getPointerCount(e2) > SINGLE_TOUCH) {
-                        return false;
-                    }
+//                    if (MotionEventCompat.getPointerCount(e1) > SINGLE_TOUCH
+//                            || MotionEventCompat.getPointerCount(e2) > SINGLE_TOUCH) {
+//                        return false;
+//                    }
 
                     return mSingleFlingListener.onFling(e1, e2, velocityX, velocityY);
                 }

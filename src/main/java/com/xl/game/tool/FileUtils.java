@@ -69,20 +69,8 @@ public class FileUtils
 		return content;
 	}
 
-
-
 	public static String readText(String path) throws IOException
 	{
-		File file = new File(path);
-		String content = null;
-		if(file.isFile())
-		{
-			FileInputStream input= new FileInputStream(file);
-
-			byte [] buf=new byte[input.available()];
-			input.read(buf);
-			content = new String(buf);
-		}
 		return FileUtils.readText(new File(path));
 	}
 
