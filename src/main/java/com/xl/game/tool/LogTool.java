@@ -36,6 +36,7 @@ public class LogTool {
     public static int win_x, win_y;
 
 
+    //检测悬浮窗权限
     public static boolean checkFloatPermission(Context context) {
         if (Build.VERSION.SDK_INT < Build.VERSION_CODES.KITKAT)
             return true;
@@ -151,7 +152,7 @@ public class LogTool {
         layout_main.addView(consoleView);
 
         consoleView.setBackgroundColor(0xf0909090);
-        consoleView.setShell("echo showlog\nlogcat\n");
+        consoleView.setShell("echo showlog\nlogcat -c\nlogcat\n");
 //        consoleView.setShell("echo showlog\nlogcat -c\nlogcat XConnect:I OConnect:I Socket:I flutter:I cappjni:I cappjni:E MainActivity:I Log:I *:S\n");
 // 获取WindowManager
         windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
