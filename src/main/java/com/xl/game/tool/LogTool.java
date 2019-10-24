@@ -151,8 +151,8 @@ public class LogTool {
         layout_main.addView(consoleView);
 
         consoleView.setBackgroundColor(0xf0909090);
-//        consoleView.setShell("echo showlog\nlogcat *:I\n");
-        consoleView.setShell("echo showlog\nlogcat -c\nlogcat XConnect:I OConnect:I Socket:I flutter:I capp-jni:I capp-jni:E MainActivity:I Log:I *:S\n");
+        consoleView.setShell("echo showlog\nlogcat\n");
+//        consoleView.setShell("echo showlog\nlogcat -c\nlogcat XConnect:I OConnect:I Socket:I flutter:I cappjni:I cappjni:E MainActivity:I Log:I *:S\n");
 // 获取WindowManager
         windowManager = (WindowManager) context.getSystemService(Context.WINDOW_SERVICE);
 
