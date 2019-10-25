@@ -81,6 +81,7 @@ public class ActivityCompat  {
     }
 
 
+
     //请求结果回调
     public interface OnRequestPermissionsResultCallback {
         void onRequestPermissionsResult(int var1,  String[] var2,  int[] var3);
