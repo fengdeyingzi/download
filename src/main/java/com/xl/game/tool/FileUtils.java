@@ -8,14 +8,17 @@ import android.os.*;
 import android.provider.DocumentsContract;
 import android.provider.MediaStore;
 import android.util.Base64;
+import android.util.Log;
 
 import com.xl.game.math.Str;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Collection;
 
 public class FileUtils
-{ 
+{
+	private static final String TAG = "FileUtils";
 	  //获取文件base64码
 		public static String encodeBase64File(String path) throws Exception {
 			File file = new File(path);
@@ -275,6 +278,37 @@ public class FileUtils
 		return "com.android.providers.downloads.documents".equals(uri.getAuthority());
 	}
 	private static boolean isMediaDocument(Uri uri) {  return "com.android.providers.media.documents".equals(uri.getAuthority());
+	}
+
+
+	//获取目录下所有的指定文件
+	public static Collection<File> listFiles(File file, String[] miniType, boolean ischeck)
+	{
+		ArrayList<File> filelist = new ArrayList();
+		Log.i(TAG, "listFiles: "+file);
+		File[] files = file.listFiles();
+		if(files==null){
+			return filelist;
+		}
+		for(int i=0;i<files.length;i++)
+		{
+			if(files[i].isFile())
+			{
+				for(String type:miniType)
+					if(files[i].getPath().endsWith(type))
+					{
+						filelist.add(files[i]);
+						break;
+					}
+			}
+			else
+			{
+				Collection<File> filelist2 = listFiles(files[i],miniType,ischeck);
+				for(File f:filelist2)
+					filelist.add(f);
+			}
+		}
+		return filelist;
 	}
 	
 }
