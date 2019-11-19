@@ -67,6 +67,35 @@ public class FileUtils
 		}
 
 	}
+
+	/**
+	 * 向文件中文本
+	 *
+	 * @param info
+	 */
+	public static void writeText(String filename,String info,String coding) {
+		File file = new File(filename);
+
+
+		try
+		{
+			if (!file.isFile())file.createNewFile();
+		}
+		catch (Exception e)
+		{}
+		try
+		{
+			FileOutputStream fileOutputStream = new FileOutputStream(file, false);
+			fileOutputStream.write(info.getBytes(coding));
+			fileOutputStream.flush();
+			fileOutputStream.close();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+	}
 	
 	//读取文本
 	public static String readText(File file) throws FileNotFoundException, IOException
