@@ -1,4 +1,4 @@
-package com.xl.view;
+package com.xl.game.view;
 import android.widget.ImageButton;
 import android.widget.Checkable;
 import android.graphics.drawable.Drawable;

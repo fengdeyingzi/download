@@ -1,4 +1,4 @@
-package com.xl.view;
+package com.xl.game.view;
 
 import android.app.AlertDialog;
 import android.app.Dialog;

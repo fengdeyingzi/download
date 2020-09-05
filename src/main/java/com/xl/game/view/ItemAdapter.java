@@ -1,11 +1,10 @@
-package com.xl.view;
+package com.xl.game.view;
 
 import android.view.*;
 import android.widget.*;
 
 import java.util.*;
 
-import android.app.Activity;
 import android.content.Context;
 import android.widget.GridLayout.LayoutParams;
 
