@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	xmlns:CircleProgressBar="http://schemas.android.com/apk/res-auto"
+	android:layout_width="fill_parent"
+	android:layout_height="wrap_content"
+	android:orientation="vertical">
+
+	<LinearLayout
+		android:layout_height="wrap_content"
+		android:layout_width="match_parent"
+		android:orientation="horizontal"
+		android:gravity="center">
+
+		<com.lsjwzh.widget.materialloadingprogressbar.CircleProgressBar
+			android:layout_width="80dp"
+			android:layout_height="80dp"
+			android:background="@null"
+			CircleProgressBar:mlpb_enable_circle_background="false"
+			CircleProgressBar:mlpb_progress_stoke_width="5dp"
+			CircleProgressBar:mlpb_progress_color="@color/colorAccent"/>
+
+		<LinearLayout
+			android:layout_height="wrap_content"
+			android:layout_width="match_parent"
+			android:orientation="vertical"
+			android:layout_weight="1.0"
+			android:paddingRight="8dp"
+			android:layout_gravity="center">
+
+			<com.gc.materialdesign.views.ProgressBarIndeterminateDeterminate
+				android:layout_width="match_parent"
+				android:layout_height="wrap_content"
+				android:layout_centerInParent="true"
+				android:background="@color/colorAccent"
+				android:id="@+id/dlg_progress"
+				android:layout_marginTop="8dp"
+				android:layout_marginBottom="8dp"/>
+
+			<TextView
+				android:layout_height="wrap_content"
+				android:text="正在下载"
+				android:layout_width="match_parent"
+				android:textSize="16sp"
+				android:id="@+id/dlg_text"/>
+
+		</LinearLayout>
+
+	</LinearLayout>
+
+</LinearLayout>
+

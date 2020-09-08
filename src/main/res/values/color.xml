@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="state_item_pressed">#AAff0000</color>
+    <color name="state_item_normal">#44ff0000</color>
+    <color name="colorPrimary">#464646</color>
+    <color name="textColorPrimary">#f0f0f0</color>
+    <color name="window_background">#323232</color>
+    <color name="colorAccent">#65bef0</color>
+    <color name="textColorHighLight">#4a7d95</color>
+    <color name="colorControlNormal">#a0a0a0</color>
+    <color name="textColor">#f0f0f0</color>
+
+
+    <color name="light_state_item_pressed">#AAff0000</color>
+    <color name="light_state_item_normal">#44ff0000</color>
+    <color name="light_colorPrimary">#65aef0</color>
+    <color name="light_textColorPrimary">#5d5d5d</color>
+    <color name="light_window_background">#f0f0f0</color>
+    <color name="light_colorAccent">#75c0f0</color>
+    <color name="light_textColorHighLight">#9adaf0</color>
+    <color name="light_colorControlNormal">#808080</color>
+    <color name="light_textColor">#303030</color>
+
+</resources>
